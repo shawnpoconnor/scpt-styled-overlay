@@ -18,7 +18,7 @@ export default class Dropdown extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           <select value={this.state.value} onChange={this.handleChange}>
-            {this.props.options.map((option) => <option>{option}</option>)}
+            {this.props.options.map((option) => <option key={option}>{option}</option>)}
           </select>
         </label>
       </form>
