@@ -1,5 +1,4 @@
 import React from 'react';
-import Dropdown from './dropdown.component';
 import PlayerAssignment from './player-assignment.component';
 
 export const VpAssignment = (props) => (
@@ -11,7 +10,7 @@ export const VpAssignment = (props) => (
       display: 'inline-block',
       width: '16.6%'
     }}>
-      <Dropdown options={props.options}/>
+      <h3>{props.card}</h3>
     </li>
     <li style={{
       width: '66%',
