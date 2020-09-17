@@ -1,5 +1,6 @@
 import React from 'react';
 import PlayerAssignment from './player-assignment.component';
+import DeleteButton from './delete-button.component'
 
 export const VpAssignment = (props) => (
   <ul style={{
@@ -19,5 +20,6 @@ export const VpAssignment = (props) => (
     }}>
       <PlayerAssignment/>
     </li>
+    <DeleteButton handleRemove={props.handleRemove} card={props.card}/>
   </ul>
 )
