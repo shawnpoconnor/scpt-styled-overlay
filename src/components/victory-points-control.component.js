@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import {VpAssignment} from './vp-assignment.component';
 import Dropdown from './dropdown.component'
 
 export default class VictoryPointControl extends Component {
@@ -8,6 +7,7 @@ export default class VictoryPointControl extends Component {
     super(props);
     this.cards = {
       public1pt: [
+        '-',
         '2 TECH 2 COLORS',
         '2 UNIT UPGRADES',
         '8 INFLUENCE', '8 RESOURCES',
@@ -19,6 +19,7 @@ export default class VictoryPointControl extends Component {
         '6 NON-HOME PLANET'
       ],
       public2pt: [
+        '-',
         '2 TECH 4 COLORS',
         '3 UNIT UPGRADES',
         '16 INFLUENCE',
@@ -31,6 +32,7 @@ export default class VictoryPointControl extends Component {
         '11 NON-HOME PLANET'
       ],
       secret: [
+        '-',
         'ALPHA AND BETA',
         '4 HAZARDOUS',
         '4 CULTURAL',
@@ -51,6 +53,7 @@ export default class VictoryPointControl extends Component {
         'WIN VS LEADER'
       ],
       other: [
+        '-',
         'SHARD of the THRONE',
         'CROWN of EMPHIDIA',
         'HOLY PLANET of IXTH',
@@ -68,24 +71,24 @@ export default class VictoryPointControl extends Component {
           <div style={{
             backgroundColor: 'tan'
           }}>
-            <Dropdown undrawn={this.cards.public1pt}/>
+            <Dropdown undrawn={this.cards.public1pt} colors={this.props.colors}/>
           </div>
           <div style={{
             backgroundColor: 'lightBlue'
           }}>
-            <Dropdown undrawn={this.cards.public2pt}/>
+            <Dropdown undrawn={this.cards.public2pt} colors={this.props.colors}/>
           </div>
           <h2>Secret Objectives</h2>
           <div style={{
             backgroundColor: 'pink'
           }}>
-            <Dropdown undrawn={this.cards.secret}/>
+            <Dropdown undrawn={this.cards.secret} colors={this.props.colors}/>
           </div>
           <h2>Other Objectives</h2>
           <div style={{
             backgroundColor: 'grey'
           }}>
-            <Dropdown undrawn={this.cards.other}/>
+            <Dropdown undrawn={this.cards.other} colors={this.props.colors}/>
           </div>
         </div>
       </div>

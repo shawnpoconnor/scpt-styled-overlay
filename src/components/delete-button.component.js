@@ -3,16 +3,21 @@ import React, {Component} from 'react';
 export default class DeleteButton extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cardToRemove: this.props.card
-    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.props.handleRemove(event.target.value)
   }
 
   render() {
     return (
-      <form onClick={this.props.handleRemove}>
-      <input type="submit" value={this.state.cardToRemove}/>
-      </form>
+      <button
+        onClick={this.handleClick}
+        value={this.props.card}
+      >
+        Delete {this.props.card}
+      </button>
     )
   }
 }

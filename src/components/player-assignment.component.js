@@ -17,12 +17,7 @@ export default class PlayerAssignment extends React.Component {
   render() {
     return (
       <ul>
-        <CheckBox bgColor='yellow'/>
-        <CheckBox bgColor='red'/>
-        <CheckBox bgColor='gray'/>
-        <CheckBox bgColor='purple'/>
-        <CheckBox bgColor='green'/>
-        <CheckBox bgColor='blue'/>
+        {this.props.colors.map((color)=> <CheckBox bgColor={color}/>)}
       </ul>
     )
   }

@@ -18,7 +18,7 @@ export const VpAssignment = (props) => (
       display: 'inline-block',
       width: '16.6%'
     }}>
-      <PlayerAssignment/>
+      <PlayerAssignment colors={props.colors}/>
     </li>
     <DeleteButton handleRemove={props.handleRemove} card={props.card}/>
   </ul>

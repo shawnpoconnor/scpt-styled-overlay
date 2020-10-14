@@ -44,7 +44,7 @@ export default class InputDisplay extends React.Component {
                 <input type="text" placeholder={this.props.placeholder} tempValue={this.state.tempValue} onChange={this.handleChange} />
               </label>
               <input type="submit" value="Submit" />
-            </form>
+            </form> 
           </div>
         );
       }else {

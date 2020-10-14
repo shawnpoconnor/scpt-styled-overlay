@@ -21,21 +21,28 @@ export default class Dropdown extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    this.setState({
-      drawn:   this.state.drawn.concat([this.state.value]),
-      undrawn: this.state.undrawn.filter(card=> card != this.state.value),
-      value:   this.state.undrawn[1]
-    })
+    const isUndrawn = this.state.undrawn.includes(this.state.value);
+    console.log(this.state.value);
+    if (isUndrawn && this.state.value != '-') {
+      this.setState({
+        drawn:   this.state.drawn.concat([this.state.value]),
+        undrawn: this.state.undrawn.filter(card=> card != this.state.value),
+        value:   this.state.undrawn[0]
+      })
+    }else {
+      alert('one second please')
+    }
   }
 
-  handleRemove(event) {
-    event.preventDefault();
+  componentDidMount() {
+
+  }
+
+  handleRemove(cardToRemove) {
     this.setState({
-      undrawn:   this.state.undrawn.concat([this.state.value]),
-      drawn: this.state.drawn.filter(card=> card != event.target.value),
+      undrawn:   this.state.undrawn.concat([cardToRemove]),
+      drawn:     this.state.drawn.filter(drawnCard => drawnCard != cardToRemove),
     });
-    console.log(event.target.value);
   }
 
   render() {
@@ -52,7 +59,7 @@ export default class Dropdown extends React.Component {
       <ul>
         {this.state.drawn.map((card) =>
           <li key={card}>
-            <VpAssignment card={card} handleRemove={this.handleRemove}/>
+            <VpAssignment key={card} colors={this.props.colors} card={card} handleRemove={this.handleRemove}/>
           </li>)}
       </ul>
       </div>

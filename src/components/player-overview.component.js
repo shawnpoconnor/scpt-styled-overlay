@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
-import {Player} from './player.component';
+import { Player } from './player.component';
 
 export default class PlayerOverview extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      colors: {
-        red: null,
-        blue: null,
-        green: null,
-        purple: null,
-        gray: null,
-        yellow: null,
-      }
-    }
-  
+
   }
 
 
